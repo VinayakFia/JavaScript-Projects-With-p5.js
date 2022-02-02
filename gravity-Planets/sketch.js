@@ -92,7 +92,7 @@ function planetCollision(i) {
   for (j = 0; j<numPlanets; j++) {
     if (j != i) {
       distance = dist(planets[i].x, planets[i].y, planets[j].x, planets[j].y);
-      if (distance <= (planets[i].r+planets[j].r)/2) {
+      if (distance <= (planets[i].r+planets[j].r)/2.2) {
         if (planets[i].mass >= planets[j].mass) {
           planets[i].mass += planets[j].mass;
           planets[i].r = sqrt(planets[i].mass/PI);
@@ -127,7 +127,8 @@ class Planet {
   }
 
   colourCalc(mass) {
-    this.colour = color(255-(mass/1000), 255-(mass/1000), 255-(mass/1000));
+    //this.colour = color((mass/7000), (mass/7000), (mass/7000));
+    this.colour = color(0, 0, 0)
   }
 
   move() {
@@ -138,11 +139,32 @@ class Planet {
   show() {  
     push();
     
+    this.shadow();
+    this.light();
+    
     this.colourCalc(this.mass);
     strokeWeight(15);
     stroke(this.strokeColour);
     fill(this.colour);
     ellipse(this.x, this.y, this.r);
+
+    pop();
+  }
+
+  shadow() {
+    push();
+    fill(100, 100);
+    noStroke();
+    ellipse(this.x+10, this.y+10, this.r+15);
+    pop();
+  }
+
+  light() {
+    push();
+    this.rSquared = this.r*this.r
+    fill(255, map(this.rSquared, 0, 10000, 3,10));
+    noStroke();
+    ellipse(this.x, this.y, this.rSquared/50);
     pop();
   }
 }
