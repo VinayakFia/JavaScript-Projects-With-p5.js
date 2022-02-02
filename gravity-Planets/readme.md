@@ -1,4 +1,4 @@
-#Gravity Simulation
+# Gravity Simulation
 
 This works on physics equations (i.e. Fg = G*m1*m2/r*r) to model a 2d world.
 
