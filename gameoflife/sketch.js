@@ -8,12 +8,17 @@ let GRID_COLOUR;
 let grid;
 let vwdivres = VW / RESOLUTION;
 let vhdivres = VH / RESOLUTION;
+let button;
 
 function setup() {
+  button = createButton('Reset');
+  button.position(50, VH + 310);
+  button.mousePressed(reset);
   setupGrid();
   BACK_COLOUR = color(3, 3, 1);
-  CELL_COLOUR_BORN = [255, 67, 101];
-  CELL_COLOUR_OLD = [254, 155, 255];
+  CELL_COLOUR_BORN = [255 / 2, 67 / 2, 101 / 2];
+  CELL_COLOUR_OLD = [255, 67, 101];
+  //CELL_COLOUR_OLD = [254, 155, 255];
   GRID_COLOUR = color(100);
   randomFill();
   //console.log(grid);
@@ -32,4 +37,9 @@ function mouseClicked() {
   let x = floor(mouseX / RESOLUTION);
   let y = floor(mouseY / RESOLUTION);
   grid[x][y] = 1;
+}
+
+function reset() {
+  setupGrid();
+  randomFill();
 }
