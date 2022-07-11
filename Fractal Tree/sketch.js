@@ -73,7 +73,7 @@ function branch(len) {
   }
   if (len > 10) {
     push();
-    strokeWeight(1);
+    strokeWeight(2);
     stroke(r1, g1, b1);
     rotate(angle+bias);
     branch(len * 0.75);
