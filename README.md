@@ -5,6 +5,9 @@ This is a collection of projects in Javascript with Processing 5 Framework
 #### NOTE:
 Alot of these were made before I realized having decent style and any semblence of optimization are slightly important.
 
+#### NOTE2:
+THE IMAGES ARE VERY LARGE GIVE THEM A SECOND TO LOAD PLEASE APOLGIESSS
+
 Here are some screen shots in order of *aesthetics*:
 ## 1. Vector_Flow_Fields
 <img width="1436" alt="image" src="https://user-images.githubusercontent.com/96902642/185544046-7977ca17-fcc0-401d-af0d-2cc2257a1c95.png">
