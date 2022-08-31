@@ -1,6 +1,6 @@
 const VW = 1200;
 const VH = 1200;
-let RESOLUTION = 1;
+let RESOLUTION = 6;
 let BACK_COLOUR; 
 let CELL_COLOUR_BORN; 
 let CELL_COLOUR_OLD; 
